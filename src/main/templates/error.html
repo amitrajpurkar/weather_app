@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Error - Weather Data Analysis{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <div style="font-size: 5rem; margin-bottom: 20px;">⚠️</div>
+    <h1 class="text-danger">Oops! Something went wrong</h1>
+    <p class="lead text-muted mt-3">We encountered an error while processing your request.</p>
+    
+    <div class="alert alert-danger mt-4" role="alert">
+        <strong>Error Details:</strong><br>
+        <code>{{ error }}</code>
+    </div>
+    
+    <div class="mt-4">
+        <a href="/" class="btn btn-primary">← Back to Home</a>
+    </div>
+</div>
+{% endblock %}

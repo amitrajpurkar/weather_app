@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Weather Data Analysis{% endblock %}
+
+{% block content %}
+<div class="text-center mb-5">
+    <h1 class="display-4 mb-3">Weather Data Analysis Dashboard</h1>
+    <p class="lead text-muted">Explore correlation patterns in weather data through interactive visualizations</p>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <div class="mb-3" style="font-size: 3rem;">📊</div>
+                <h3 class="card-title">Correlation Matrix</h3>
+                <p class="card-text text-muted">
+                    View a detailed tabular summary showing Pearson correlation coefficients 
+                    between all numeric weather variables in the dataset.
+                </p>
+                <a href="/summary" class="btn btn-primary mt-3">View Summary Table</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <div class="mb-3" style="font-size: 3rem;">🔥</div>
+                <h3 class="card-title">Correlation Heatmap</h3>
+                <p class="card-text text-muted">
+                    Visualize the correlation matrix as a color-coded heatmap, making it easy 
+                    to identify strong positive and negative relationships at a glance.
+                </p>
+                <a href="/heatmap" class="btn btn-primary mt-3">View Heatmap</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <div class="mb-3" style="font-size: 3rem;">📈</div>
+                <h3 class="card-title">Monthly Trends</h3>
+                <p class="card-text text-muted">
+                    Explore month-over-month weather patterns for 2012. See how temperature, 
+                    humidity, wind, and other metrics changed throughout the year.
+                </p>
+                <a href="/monthly-trends" class="btn btn-primary mt-3">View Monthly Trends</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-5 p-4 bg-light rounded">
+    <h4 class="mb-3">About This Application</h4>
+    <p class="mb-2">
+        This weather data analysis application demonstrates:
+    </p>
+    <ul class="text-muted">
+        <li>Data loading and processing with <strong>Pandas</strong></li>
+        <li>Statistical correlation analysis across weather metrics</li>
+        <li>Interactive visualizations using <strong>Seaborn</strong> and <strong>Matplotlib</strong></li>
+        <li>Modern web interface built with <strong>Flask</strong> and <strong>Bootstrap</strong></li>
+        <li>Modular project structure following best practices</li>
+    </ul>
+</div>
+{% endblock %}

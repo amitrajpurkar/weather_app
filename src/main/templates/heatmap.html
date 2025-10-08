@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Correlation Heatmap - Weather Data Analysis{% endblock %}
+
+{% block extra_css %}
+<style>
+    .heatmap-container {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        text-align: center;
+    }
+    .heatmap-container img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="mb-4">
+    <h1>🔥 Weather Data Correlation Heatmap</h1>
+    <p class="text-muted">
+        Visual representation of the correlation matrix using a color-coded heatmap. 
+        Red indicates positive correlation, blue indicates negative correlation.
+    </p>
+</div>
+
+<div class="alert alert-info">
+    <strong>💡 Reading the Heatmap:</strong> Darker red colors show strong positive correlations, 
+    while darker blue colors indicate strong negative correlations. White/light colors represent weak correlations.
+</div>
+
+<div class="heatmap-container">
+    <img src="{{ image_url }}" alt="Correlation Heatmap" class="img-fluid">
+</div>
+
+<div class="mt-4">
+    <a href="/summary" class="btn btn-primary">View as Table →</a>
+    <a href="/" class="btn btn-outline-secondary">← Back to Home</a>
+</div>
+{% endblock %}

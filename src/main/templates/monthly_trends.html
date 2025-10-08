@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block title %}Monthly Trends - Weather Data Analysis{% endblock %}
+
+{% block extra_css %}
+<style>
+    .trends-container {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        text-align: center;
+    }
+    .trends-container img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .info-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+    .info-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .info-card h4 {
+        margin: 0;
+        font-size: 0.9rem;
+        opacity: 0.9;
+        font-weight: 600;
+    }
+    .info-card p {
+        margin: 10px 0 0 0;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="mb-4">
+    <h1>📈 Monthly Weather Trends - {{ year }}</h1>
+    <p class="text-muted">
+        Explore how weather conditions changed throughout the year. Each chart shows the average 
+        monthly values for key weather metrics.
+    </p>
+</div>
+
+<div class="info-cards">
+    <div class="info-card">
+        <h4>📊 Metrics Tracked</h4>
+        <p>6 Variables</p>
+    </div>
+    <div class="info-card">
+        <h4>📅 Time Period</h4>
+        <p>12 Months</p>
+    </div>
+    <div class="info-card">
+        <h4>🌡️ Temperature</h4>
+        <p>Seasonal Patterns</p>
+    </div>
+    <div class="info-card">
+        <h4>💨 Wind & Pressure</h4>
+        <p>Atmospheric Trends</p>
+    </div>
+</div>
+
+<div class="alert alert-info">
+    <strong>💡 Insights:</strong> The charts below show monthly averages for Temperature, Humidity, 
+    Wind Speed, Pressure, Visibility, and Dew Point. Look for seasonal patterns and correlations 
+    between different weather variables throughout the year.
+</div>
+
+<div class="trends-container">
+    <img src="{{ image_url }}" alt="Monthly Weather Trends {{ year }}" class="img-fluid">
+</div>
+
+<div class="mt-4">
+    <a href="/summary" class="btn btn-primary">View Correlation Matrix →</a>
+    <a href="/heatmap" class="btn btn-primary">View Heatmap →</a>
+    <a href="/" class="btn btn-outline-secondary">← Back to Home</a>
+</div>
+
+<div class="mt-5 p-4 bg-light rounded">
+    <h4 class="mb-3">Understanding the Charts</h4>
+    <div class="row">
+        <div class="col-md-6">
+            <h5>🌡️ Temperature & Dew Point</h5>
+            <p class="text-muted small">
+                Track how temperatures vary across seasons. Dew point indicates moisture levels in the air.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <h5>💧 Humidity & Visibility</h5>
+            <p class="text-muted small">
+                Relative humidity shows moisture percentage. Visibility often correlates with weather conditions.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <h5>💨 Wind Speed</h5>
+            <p class="text-muted small">
+                Average wind speeds can indicate seasonal weather patterns and storm activity.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <h5>🔽 Atmospheric Pressure</h5>
+            <p class="text-muted small">
+                Pressure changes often precede weather changes. Lower pressure typically means storms.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
