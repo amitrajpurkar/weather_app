@@ -8,6 +8,14 @@
  * showcase usage of proper project structure/ organization
  * showcase usage of testcases/ TDD
 
+## features added
+ * Windsurf Cascade as AI Code Assistant
+ * Entire project structure created using Cascade
+ * [prompt_interaction.md](prompt_interaction.md) contains entire conversation with Cascade
+ * [FEATURES.md](FEATURES.md) contains list of features added
+ * [RUNNING.md](RUNNING.md) contains instructions to run the application
+ * [README.md](README.md) contains intent of this application
+
 ## tech stack within python eco system
  * UV for package management
  * flask8 for quick api and app-server support?
