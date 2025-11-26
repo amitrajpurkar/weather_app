@@ -8,6 +8,15 @@
  * showcase usage of proper project structure/ organization
  * showcase usage of testcases/ TDD
 
+## quick start
+   ```bash
+   uv sync
+   python main.py
+
+   # navigate to http://127.0.0.1:5000
+   ```
+
+   
 ## features added
  * Windsurf Cascade as AI Code Assistant
  * Entire project structure created using Cascade
